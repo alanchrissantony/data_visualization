@@ -1,0 +1,46 @@
+.row {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.posters {
+  display: flex;
+  padding: 20px;
+  overflow-x: auto; 
+  overflow-y: hidden; 
+  white-space: nowrap; 
+  scroll-snap-type: x mandatory; 
+}
+
+.posters::-webkit-scrollbar {
+  display: none;
+}
+
+.poster {
+  flex: 0 0 auto; 
+  margin-right: 10px; 
+  cursor: pointer; 
+  transition: transform 0.2s ease-in-out; 
+}
+
+.poster:hover {
+  transform: scale(1.1); 
+}
+
+.fade-out-horizontal {
+  position: relative;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.fade-out-horizontal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px; 
+  height: 100%;
+  background: linear-gradient(to right, transparent, white);
+  pointer-events: none; 
+}
